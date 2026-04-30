@@ -1,5 +1,6 @@
-For Windows, please use the .exe release
-For other platforms, there is a .jar release
+For Windows, please use the .exe release.
+
+For other platforms, there is a .jar release.
 
 
 HitachiTEMTIFF_to_OME-TIFF – Build Instructions
