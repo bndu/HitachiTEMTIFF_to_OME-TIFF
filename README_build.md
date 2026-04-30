@@ -74,6 +74,10 @@ If Java is not recognised:
 - Check your PATH environment variable
 - Reinstall Java if necessary
 
+ Disclaimer
+This software is an independent project and is not affiliated with, endorsed by, or supported by Hitachi High-Technologies or any of its affiliates.
+The use of the name "Hitachi" refers solely to the format of the input data and does not imply any association with the company.
+
 License
 
 This project depends on Bio-Formats (GPL v2). Any distribution must comply with GPL v2 or a compatible license.
