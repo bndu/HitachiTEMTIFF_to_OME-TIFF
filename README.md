@@ -85,7 +85,7 @@ The use of the name "Hitachi" refers solely to the format of the input data and 
 
 License
 
-This project depends on Bio-Formats (GPL v2). Any distribution must comply with GPL v2 or a compatible license.
+This project depends on Bio-Formats (GPL v2) https://github.com/ome/bioformats. Any distribution must comply with GPL v2 or a compatible license.
 
 For details:
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
