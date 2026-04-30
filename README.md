@@ -1,24 +1,83 @@
-# HitachiTEMTIFF_to_OME-TIFF
-Java file converter for Hitachi TEM TIFF to OME-TIFF
+HitachiTEMTIFF_to_OME-TIFF – Build Instructions
 
 Overview
-This tool converts Hitachi TEM image files (.tif) and their associated metadata files (.txt) into OME-TIFF format. The output is compatible with Fiji, ImageJ, Bio-Formats, and other OME-aware software.
+This document explains how to build the Hitachi TEM TIFF to OME-TIFF converter from source using Maven.
 
 Requirements
-- Java 17 or newer
 
-How to Run
-1. Place the .jar file in the same folder as your .tif and .txt files
-2. Double-click the .jar file
-   or run: java -jar hitachi_to_OME-TIFF_converter.jar
+1. Java Development Kit (JDK)
+- Version: 17 or newer
+- Verify installation:
+  java -version
 
-Metadata Mapping
-- PixelSize → Pixels.PhysicalSizeX/Y
-- StagePositionX/Y/Z → Plane.PositionX/Y/Z
-- Magnification → Objective.NominalMagnification
-- Date + Time → Image.AcquisitionDate
+Download:
+https://adoptium.net/
 
-Other metadata is stored as structured annotations.
+2. Apache Maven
+- Verify installation:
+  mvn -version
 
-Licensing
-This software uses Bio-Formats (GPL v2), so distribution must comply with GPL v2.
+Download:
+https://maven.apache.org/
+
+Project Structure
+
+The project follows a standard Maven layout:
+
+src/
+  main/
+    java/
+      TiffToOmeTiffConverter.java
+
+pom.xml
+
+Build Instructions
+
+1. Open a terminal or command prompt
+
+2. Navigate to the project root directory (where pom.xml is located):
+
+   cd path_to_project
+
+3. Run the Maven build:
+
+   mvn clean package
+
+4. After a successful build, the compiled JAR will be located at:
+
+   target/hitachi_to_OME-TIFF_converter-1.0-shaded.jar
+
+Running the Built Application
+
+Run the application using:
+
+   java -jar target/hitachi_to_OME-TIFF_converter-1.0-shaded.jar
+
+Notes
+
+- The build uses the Maven Shade Plugin to create a standalone (fat) JAR including all dependencies.
+- The resulting JAR can be distributed directly without requiring external libraries.
+- Warnings about overlapping resources during the build are normal and can be ignored.
+
+Troubleshooting
+
+If Maven fails:
+
+- Ensure Java 17+ is being used
+- Ensure internet access is available for dependency download
+- Try forcing dependency updates:
+
+  mvn clean package -U
+
+If Java is not recognised:
+
+- Check your PATH environment variable
+- Reinstall Java if necessary
+
+License
+
+This project depends on Bio-Formats (GPL v2). Any distribution must comply with GPL v2 or a compatible license.
+
+For details:
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
