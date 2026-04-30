@@ -1,0 +1,65 @@
+HitachiTEMTIFF_to_OME-TIFF
+
+Overview
+This application converts Hitachi TEM image files (.tif) and their associated metadata files (.txt) into OME-TIFF format. The output is compatible with Fiji, ImageJ, Bio-Formats, and other OME-aware software.
+
+Features
+- Graphical user interface
+- Batch processing of multiple files
+- OME-compliant output
+- Metadata mapping for stage, magnification, acquisition time
+- Additional metadata preserved as annotations
+
+Requirements
+- Java 17 or newer
+- Maven (only required for building from source)
+
+Check Java installation:
+java -version
+
+Check Maven installation:
+mvn -version
+
+Running the Application
+Place the .jar file in a folder containing .tif and .txt pairs.
+
+Run by double-clicking the .jar or using:
+java -jar hitachi_to_OME-TIFF_converter.jar
+
+The application will:
+- Detect valid files
+- Ask for confirmation
+- Convert all files
+
+Output files are created as:
+filename.ome.tif
+
+Building from Source
+Navigate to the project root directory and run:
+mvn clean package
+
+The compiled JAR will be located at:
+target/hitachi_to_OME-TIFF_converter-1.0-shaded.jar
+
+Run the built JAR:
+java -jar target/hitachi_to_OME-TIFF_converter-1.0-shaded.jar
+
+Metadata Mapping
+Standard OME fields:
+- PixelSize → Pixels.PhysicalSizeX/Y
+- StagePositionX/Y/Z → Plane.PositionX/Y/Z
+- Magnification → Objective.NominalMagnification
+- Date and Time → Image.AcquisitionDate
+
+All other metadata is stored as structured annotations.
+
+Notes
+- Pixel size is converted from nanometers to micrometers
+- Existing .ome.tif files are not overwritten
+- Some TEM-specific fields are not defined in OME and are stored as annotations
+
+Licensing
+This project depends on Bio-Formats (GPL v2). Therefore this software must be distributed under GPL-compatible terms.
+
+See:
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
