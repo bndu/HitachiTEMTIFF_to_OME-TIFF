@@ -1,6 +1,6 @@
-For Windows, please use the .exe release.
+For Windows, please use the .exe release. https://github.com/bndu/HitachiTEMTIFF_to_OME-TIFF/releases/tag/exe
 
-For other platforms, there is a .jar release.
+For other platforms, there is a .jar release. https://github.com/bndu/HitachiTEMTIFF_to_OME-TIFF/releases/tag/jar
 
 
 HitachiTEMTIFF_to_OME-TIFF – Build Instructions
